@@ -1,0 +1,19 @@
+4.  Learn “find” and “grep” commands and show some examples if their usage.
+
+Find search the specified path for a given filename (in the form of an expression).
+
+Grep searches within text based files for an expression in a specified path.
+
+ 5.  Shell script
+ 
+ A shell script is a computer program designed to be run by the Unix shell, a command line interpreter. The various dialects of shell scripts are considered to be scripting languages.
+ 
+ # This script displays the date, time, username and
+   # current directory.
+   echo "Date and time is:"
+   date
+   echo
+   echo "Your username is: `whoami` \\n"
+   echo "Your current directory is: \\c"
+   pwd
+ 
