@@ -6,7 +6,6 @@
 main()
 {
 
-	char *mode = "r";
 	char *outputFilename = "output.txt";
 	char ch;
 
