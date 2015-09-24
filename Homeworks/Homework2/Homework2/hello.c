@@ -5,12 +5,14 @@
 
 main()
 {
-    FILE *ifp, *ofp;
-	
-	printf("Hello World");	
 
 	char *mode = "r";
-	char outputFilename[] = "out.list";
+	char *outputFilename = "output.txt";
+	char ch;
+
+    FILE *ifp, *ofp;
+	
+	printf("Hello World");		
 
 	ifp = fopen("input.txt", "r");
 
@@ -22,9 +24,18 @@ main()
 	ofp = fopen(outputFilename, "w");
 
 	if (ofp == NULL) {
-		 fprintf(stderr, "Can't open output file %s!\n",
-         outputFilename);
+		fprintf(stderr, "Can't open output file %s!\n",
+        outputFilename);
 		exit(1);
+	}
+
+	while (1) {
+      ch = fgetc(ifp);
+ 
+      if (ch == EOF)
+         break;
+      else
+         putc(ch, ofp);
 	}
 
 	fclose(ifp);
