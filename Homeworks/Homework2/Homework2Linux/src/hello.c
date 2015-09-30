@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-main()
+int main()
 {
 
 	char *outputFilename = "output.txt";
@@ -16,7 +16,7 @@ main()
 	ifp = fopen("input.txt", "r");
 
 	if (ifp == NULL){
-		fprintf(stderr, "Can't open input file in.list!\n");
+		fprintf(stderr, "Can't open input file input.txt!\n");
 		exit(1);
 	}
 
@@ -39,4 +39,6 @@ main()
 
 	fclose(ifp);
 	fclose(ofp);
+
+	return 0;
 }
