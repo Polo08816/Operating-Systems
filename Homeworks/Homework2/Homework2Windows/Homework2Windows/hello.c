@@ -1,4 +1,4 @@
-/* Hello World program */
+/* Hello World program - Windows MSVS2012 */
 
 #include<stdio.h>
 #include<stdlib.h>
