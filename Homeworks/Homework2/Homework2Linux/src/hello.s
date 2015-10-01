@@ -5,16 +5,20 @@
 .LC1:
 	.string	"Hello World"
 .LC2:
-	.string	"r"
+	.string	"a"
 .LC3:
 	.string	"input.txt"
 	.align 8
 .LC4:
 	.string	"Can't open input file input.txt!\n"
 .LC5:
-	.string	"w"
-.LC6:
 	.string	"Can't open output file %s!\n"
+	.align 8
+.LC6:
+	.string	"..appending text to INPUT file."
+	.align 8
+.LC7:
+	.string	"..appending text to OUTPUT file."
 	.text
 	.globl	main
 	.type	main, @function
@@ -47,7 +51,7 @@ main:
 	call	exit
 .L2:
 	movq	-8(%rbp), %rax
-	movl	$.LC5, %esi
+	movl	$.LC2, %esi
 	movq	%rax, %rdi
 	call	fopen
 	movq	%rax, -24(%rbp)
@@ -55,7 +59,7 @@ main:
 	jne	.L3
 	movq	stderr(%rip), %rax
 	movq	-8(%rbp), %rdx
-	movl	$.LC6, %esi
+	movl	$.LC5, %esi
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	fprintf
@@ -77,6 +81,18 @@ main:
 	call	_IO_putc
 	jmp	.L3
 .L7:
+	movq	-16(%rbp), %rax
+	movq	%rax, %rcx
+	movl	$31, %edx
+	movl	$1, %esi
+	movl	$.LC6, %edi
+	call	fwrite
+	movq	-24(%rbp), %rax
+	movq	%rax, %rcx
+	movl	$32, %edx
+	movl	$1, %esi
+	movl	$.LC7, %edi
+	call	fwrite
 	movq	-16(%rbp), %rax
 	movq	%rax, %rdi
 	call	fclose

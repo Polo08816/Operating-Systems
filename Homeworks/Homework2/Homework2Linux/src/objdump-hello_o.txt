@@ -1,0 +1,78 @@
+Script started on Thu 01 Oct 2015 12:32:24 PM EDT
+]0;user@localhost:~/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src]7;file://localhost.localdomain/home/user/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src[?1034h[user@localhost src]$ objdump-hello[K[K[K[K[K[K -d hello.o
+
+hello.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 20          	sub    $0x20,%rsp
+   8:	48 8d 05 00 00 00 00 	lea    0x0(%rip),%rax        # f <main+0xf>
+   f:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  13:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 1a <main+0x1a>
+  1a:	b8 00 00 00 00       	mov    $0x0,%eax
+  1f:	e8 00 00 00 00       	callq  24 <main+0x24>
+  24:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 2b <main+0x2b>
+  2b:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 32 <main+0x32>
+  32:	e8 00 00 00 00       	callq  37 <main+0x37>
+  37:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+  3b:	48 83 7d f0 00       	cmpq   $0x0,-0x10(%rbp)
+  40:	75 2d                	jne    6f <main+0x6f>
+  42:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 49 <main+0x49>
+  49:	48 8b 00             	mov    (%rax),%rax
+  4c:	48 89 c1             	mov    %rax,%rcx
+  4f:	ba 21 00 00 00       	mov    $0x21,%edx
+  54:	be 01 00 00 00       	mov    $0x1,%esi
+  59:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 60 <main+0x60>
+  60:	e8 00 00 00 00       	callq  65 <main+0x65>
+  65:	bf 01 00 00 00       	mov    $0x1,%edi
+  6a:	e8 00 00 00 00       	callq  6f <main+0x6f>
+  6f:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  73:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # 7a <main+0x7a>
+  7a:	48 89 c7             	mov    %rax,%rdi
+  7d:	e8 00 00 00 00       	callq  82 <main+0x82>
+  82:	48 89 45 e8          	mov    %rax,-0x18(%rbp)
+  86:	48 83 7d e8 00       	cmpq   $0x0,-0x18(%rbp)
+  8b:	75 2c                	jne    b9 <main+0xb9>
+  8d:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 94 <main+0x94>
+  94:	48 8b 00             	mov    (%rax),%rax
+  97:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+  9b:	48 8d 35 00 00 00 00 	lea    0x0(%rip),%rsi        # a2 <main+0xa2>
+  a2:	48 89 c7             	mov    %rax,%rdi
+  a5:	b8 00 00 00 00       	mov    $0x0,%eax
+  aa:	e8 00 00 00 00       	callq  af <main+0xaf>
+  af:	bf 01 00 00 00       	mov    $0x1,%edi
+  b4:	e8 00 00 00 00       	callq  b9 <main+0xb9>
+  b9:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  bd:	48 89 c7             	mov    %rax,%rdi
+  c0:	e8 00 00 00 00       	callq  c5 <main+0xc5>
+  c5:	88 45 e7             	mov    %al,-0x19(%rbp)
+  c8:	80 7d e7 ff          	cmpb   $0xff,-0x19(%rbp)
+  cc:	75 02                	jne    d0 <main+0xd0>
+  ce:	eb 14                	jmp    e4 <main+0xe4>
+  d0:	0f be 45 e7          	movsbl -0x19(%rbp),%eax
+  d4:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+  d8:	48 89 d6             	mov    %rdx,%rsi
+  db:	89 c7                	mov    %eax,%edi
+  dd:	e8 00 00 00 00       	callq  e2 <main+0xe2>
+  e2:	eb d5                	jmp    b9 <main+0xb9>
+  e4:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+  e8:	48 89 c1             	mov    %rax,%rcx
+  eb:	ba 1f 00 00 00       	mov    $0x1f,%edx
+  f0:	be 01 00 00 00       	mov    $0x1,%esi
+  f5:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # fc <main+0xfc>
+  fc:	e8 00 00 00 00       	callq  101 <main+0x101>
+ 101:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 105:	48 89 c1             	mov    %rax,%rcx
+ 108:	ba 20 00 00 00       	mov    $0x20,%edx
+ 10d:	be 01 00 00 00       	mov    $0x1,%esi
+ 112:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 119 <main+0x119>
+ 119:	e8 00 00 00 00       	callq  11e <main+0x11e>
+ 11e:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+ 122:	48 89 c7             	mov    %rax,%rdi
+ 125:	e8 00 00 00 00       	callq  12a <main+0x12a>
+ 12a:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 12e:	48 89 c
