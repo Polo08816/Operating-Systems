@@ -1,7 +1,34 @@
-Script started on Thu 01 Oct 2015 12:32:24 PM EDT
-]0;user@localhost:~/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src]7;file://localhost.localdomain/home/user/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src[?1034h[user@localhost src]$ objdump-hello[K[K[K[K[K[K -d hello.o
+Script started on Thu 01 Oct 2015 01:26:22 PM EDT
+]0;user@localhost:~/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src]7;file://localhost.localdomain/home/user/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src[?1034h[user@localhost src]$ d[Kobjdump -d -t hello.o
 
 hello.o:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000000000 l    df *ABS*	0000000000000000 hello.c
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .data	0000000000000000 .data
+0000000000000000 l    d  .bss	0000000000000000 .bss
+0000000000000000 l    d  .rodata	0000000000000000 .rodata
+0000000000000000 l    d  .debug_info	0000000000000000 .debug_info
+0000000000000000 l    d  .debug_abbrev	0000000000000000 .debug_abbrev
+0000000000000000 l    d  .debug_aranges	0000000000000000 .debug_aranges
+0000000000000000 l    d  .debug_line	0000000000000000 .debug_line
+0000000000000000 l    d  .debug_str	0000000000000000 .debug_str
+0000000000000000 l    d  .note.GNU-stack	0000000000000000 .note.GNU-stack
+0000000000000000 l    d  .eh_frame	0000000000000000 .eh_frame
+0000000000000000 l    d  .comment	0000000000000000 .comment
+0000000000000000 g     F .text	000000000000013d main
+0000000000000000         *UND*	0000000000000000 _GLOBAL_OFFSET_TABLE_
+0000000000000000         *UND*	0000000000000000 printf
+0000000000000000         *UND*	0000000000000000 fopen
+0000000000000000         *UND*	0000000000000000 stderr
+0000000000000000         *UND*	0000000000000000 fwrite
+0000000000000000         *UND*	0000000000000000 exit
+0000000000000000         *UND*	0000000000000000 fprintf
+0000000000000000         *UND*	0000000000000000 fgetc
+0000000000000000         *UND*	0000000000000000 _IO_putc
+0000000000000000         *UND*	0000000000000000 fclose
+
 
 
 Disassembly of section .text:
@@ -75,4 +102,12 @@ Disassembly of section .text:
  122:	48 89 c7             	mov    %rax,%rdi
  125:	e8 00 00 00 00       	callq  12a <main+0x12a>
  12a:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
- 12e:	48 89 c
+ 12e:	48 89 c7             	mov    %rax,%rdi
+ 131:	e8 00 00 00 00       	callq  136 <main+0x136>
+ 136:	b8 00 00 00 00       	mov    $0x0,%eax
+ 13b:	c9                   	leaveq 
+ 13c:	c3                   	retq   
+]0;user@localhost:~/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src]7;file://localhost.localdomain/home/user/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/src[user@localhost src]$ sc[K[Kexit
+exit
+
+Script done on Thu 01 Oct 2015 01:26:34 PM EDT
