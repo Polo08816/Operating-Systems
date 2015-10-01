@@ -1,4 +1,4 @@
-/* Hello World program */
+/* Hello World program - Linux GCC*/
 
 #include<stdio.h>
 #include<stdlib.h>
