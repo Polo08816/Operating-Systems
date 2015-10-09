@@ -1,16 +1,15 @@
-/* Hello World program - Linux GCC*/
+/* Hello World program Homework #3- Linux GCC*/
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/types.h>
 #include<unistd.h>
-
-#define MAX_COUNT = 200
-#define BUF_SIZE = 100
+#include<sys/wait.h>
 
 /*
  * How to create multiple child processes
  * http://stackoverflow.com/questions/10909011/how-to-use-fork-to-create-only-2-child-processes
+ * http://www.linuxquestions.org/questions/programming-9/create-n-child-processes-fork-629832/
  *
  * How to make the parent wait on the child process
  * http://stackoverflow.com/questions/19099663/how-to-correctly-use-fork-exec-wait
@@ -19,56 +18,33 @@
 int main()
 {
 
-	pid_t pid, pid_parent, pid_child;
 
-//	char *outputFilename = "output.txt";
-//	char ch;
-//
-//	FILE *ifp, *ofp;
+	pid_t pid_parent;
+	int i;
 
-	pid = getpid();
-	printf("\nParent process PID: %d", pid);
-	printf("\nClearing buffer\n");
+	pid_parent = getpid();
+	printf("\nParent process PID: %d\n", pid_parent);
 
-	execlp("Homework3Linux", NULL);
+	for (i = 0; i < 4; i++){
+		//fork child process
+		pid_t pid = fork();
 
-	pid_child = fork();
-	pid_parent = getppid();
+		if (pid < 0){ // error
+			printf(stderr, "Fork failed");
+			exit(1);
+		} else if (pid == 0){ //child
+			printf("\nHello World!  I'm the CHILD!  My PID is: %d\n", getpid());
+			exit(0);
+		} else {
 
-	printf("\nHello World!  My PID is: %d\n", pid_child);
-	printf("\nHello World!  My parent PID is: %d\n", pid_parent);
+		}
+
+		wait(NULL);
+
+	}
 
 
+	printf("\nHello World!  I'm the PARENT!  My PID is: %d\n", getpid());
 
-//	ifp = fopen("input.txt", "a");
-//
-//	if (ifp == NULL){
-//		fprintf(stderr, "Can't open input file input.txt!\n");
-//		exit(1);
-//	}
-//
-//	ofp = fopen(outputFilename, "a");
-//
-//	if (ofp == NULL) {
-//		fprintf(stderr, "Can't open output file %s!\n",
-//        outputFilename);
-//		exit(1);
-//	}
-//
-//	while (1) {
-//      ch = fgetc(ifp);
-//
-//      if (ch == EOF)
-//         break;
-//      else
-//         putc(ch, ofp);
-//	}
-//
-//	fprintf(ifp, "..appending text to INPUT file.");
-//	fprintf(ofp, "..appending text to OUTPUT file.");
-//
-//	fclose(ifp);
-//	fclose(ofp);
-
-	return 0;
+	exit(EXIT_SUCCESS);
 }
