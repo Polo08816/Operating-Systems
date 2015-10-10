@@ -19,7 +19,7 @@ int main()
 {
 
 
-	pid_t pid_parent;
+	pid_t pid_parent, pid;
 	int i;
 
 	pid_parent = getpid();
@@ -27,19 +27,21 @@ int main()
 
 	for (i = 0; i < 4; i++){
 		//fork child process
-		pid_t pid = fork();
+//		pid_t pid = fork();
+		pid = fork();
 
 		if (pid < 0){ // error
 			printf(stderr, "Fork failed");
 			exit(1);
 		} else if (pid == 0){ //child
 			printf("\nHello World!  I'm the CHILD!  My PID is: %d\n", getpid());
+			execlp("/home/user/git/Operating-Systems/Homeworks/Homework3/Homework3Linux/Debug/Homework3Linux", "Homework3Linux");
 			exit(0);
 		} else {
-
+			wait(NULL);
 		}
 
-		wait(NULL);
+//		wait(NULL);
 
 	}
 
