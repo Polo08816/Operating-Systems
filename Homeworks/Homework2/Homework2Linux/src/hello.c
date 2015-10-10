@@ -1,4 +1,4 @@
-/* Hello World program - Linux GCC*/
+/* Hello World program -Homework 2- Linux GCC*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -12,7 +12,7 @@ int main()
 	FILE *ifp, *ofp;
 //	FILE *ifp;
 
-	printf("Hello World");
+	printf("Hello World - Homework 2");
 
 	ifp = fopen("input.txt", "a");
 

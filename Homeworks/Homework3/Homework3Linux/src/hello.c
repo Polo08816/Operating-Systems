@@ -2,9 +2,9 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<sys/types.h>
-#include<unistd.h>
-#include<sys/wait.h>
+//#include<sys/types.h>
+//#include<unistd.h>
+//#include<sys/wait.h>
 
 /*
  * How to create multiple child processes
@@ -35,10 +35,11 @@ int main()
 			exit(1);
 		} else if (pid == 0){ //child
 			printf("\nHello World!  I'm the CHILD!  My PID is: %d\n", getpid());
-			execlp("/home/user/git/Operating-Systems/Homeworks/Homework3/Homework3Linux/Debug/Homework3Linux", "Homework3Linux");
-			exit(0);
+			execlp("/home/user/git/Operating-Systems/Homeworks/Homework2/Homework2Linux/Debug/Homework2Linux", "Homework2Linux", NULL);
+//			exit(0);
 		} else {
 			wait(NULL);
+//			printf("Child complete.");
 		}
 
 //		wait(NULL);
@@ -48,5 +49,5 @@ int main()
 
 	printf("\nHello World!  I'm the PARENT!  My PID is: %d\n", getpid());
 
-	exit(EXIT_SUCCESS);
+	return(0);
 }
