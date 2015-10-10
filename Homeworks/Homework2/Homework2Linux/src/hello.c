@@ -10,7 +10,6 @@ int main()
 	char ch;
 
 	FILE *ifp, *ofp;
-//	FILE *ifp;
 
 	printf("Hello World - Homework 2");
 
