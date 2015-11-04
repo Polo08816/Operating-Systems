@@ -1,12 +1,8 @@
 /**
- * 
- */
-
-/**
  * @author Kevin Kuo
  *
  */
-public class Homework4Java implements Runnable{
+public class Homework4BJava implements Runnable{
 
 	/**
 	 * @param args
@@ -14,7 +10,7 @@ public class Homework4Java implements Runnable{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < 20; i++){
-			(new Thread(new Homework4Java())).start();
+			(new Thread(new Homework4BJava())).start();
 		}
 		
 	}
